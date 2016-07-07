@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <title>Your Result</title>
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <link rel="stylesheet" type="text/css" href="/static/css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/style2.css" />
+    <link href="/static/css/bootstrap.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="/static/js/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.uploadify.js"></script>
+
+</head>
+<body>
+  <div class="container">
+      <section class="cn-container">
+          <div class="cn-slide" id="slide-3-1">
+              <header>
+                  <h1>Android Application <span> #Report</span></h1>
+                  <h2>for learning more about your Android smart device security</h2>
+              </header>
+              <h3>Your Result</h3>
+              <a href="javascript:history.go(-1);" class="cn-back">Back</a>
+              <div class="cn-content">
+                  <table class="table table-bordered">
+                      <thead>
+                      <tr>
+                          <th>Package Name</th>
+                          <th>{{ app.packagename }}</th>
+
+
+                      </tr>
+                      </thead>
+                      <thead>
+                      <tr>
+                          <th>Application Version</th>
+                          <th>{{ app.app_version }}</th>
+                      </tr>
+                      </thead>
+                      <thead>
+                      <tr>
+                          <th>MD5 Value</th>
+                          <th>{{ app.md5 }}</th>
+                      </tr>
+                      </thead>
+                      <thead>
+                      <tr>
+                          <th>Min Required SDK Version</th>
+                          <th>{{ app.minSDKversion }}</th>
+                      </tr>
+                      </thead>
+                  </table>
+                  <br/>
+                  <table class="table table-bordered">
+                      <thead>
+                      <tr>
+                          <th>Permission Name (Click the permission for more information)</th>
+                          <th>Description</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      {% for i in app.permission %}
+                              <tr>
+                                  <td><a href=http://developer.android.com/reference/android/Manifest.permission.html#{{i.0}} target="_blank" >{{ i.0 }}</a></td>
+                                  <td>{{ i.1 }}</td>
+                              </tr>
+                      {% endfor %}
+                      </tbody>
+                  </table>
+                  <br/>
+                  <table class="table table-bordered">
+                      <thead>
+                      <tr>
+                          <th>AD SDK</th>
+                          <th>{{ app.ad_SDK }}</th>
+                      </tr>
+                      </thead>
+
+                  </table>
+                  <br/>
+                  <table class="table table-bordered">
+                      <thead>
+                      <tr>
+                          <th>Type</th>
+                          <th>Condition</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr>
+                          <td>CRYPTO</td>
+                          <td>{{ app.CRYPTO }}</td>
+                      </tr>
+                      <tr>
+                          <td>DYNAMIC</td>
+                          <td>{{ app.DYNAMIC }}</td>
+                      </tr>
+                      <tr>
+                          <td>NATIVE</td>
+                          <td>{{ app.NATIVE }}</td>
+                      </tr>
+                      <tr>
+                          <td>REFLECTION</td>
+                          <td>{{ app.REFLECTION}}</td>
+                      </tr>
+
+                      </tbody>
+
+                  </table>
+                  <br/>
+                  <h1>Risk Score: {{ app.risk }}</h1>
+              </div>
+              <br/>
+              <footer class="cn-note">
+                  <p class="pull-right"><a href="#slide-3-1">Back to top</a></p>
+                  <p>Copyright &copy; 2016 HT All Rights Reserved.</p>
+              </footer>
+          </div>
+      </section>
+
+  </div>
+
+</body>
+</html>

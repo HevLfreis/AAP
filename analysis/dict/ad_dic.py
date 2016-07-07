@@ -1,0 +1,43 @@
+#!/usr/bin/env python
+# coding: utf-8
+# created by hevlhayt@foxmail.com
+# Date: 13-8-10 
+# Time: 下午9:40
+# 
+ADMODULE = {'com.google.ads': ['AdMob', 'http://www.google.com/ads/admob/', 0],
+            'com.baidu': ['Baidu', 'http://munion.baidu.com/', 1],
+            'net.youmi.android': ['Youmi', 'http://www.youmi.net/', 2],
+            'com.tencent.mobwin': ['MobWin', 'http://mobwin.app.qq.com', 3],
+            'com.wooboo': ['Wooboo', 'http://www.wooboo.com.cn/', 4],
+            'cn.casee': ['Casee', 'http://www.casee.cn/mm/Index.ad', 5],
+            'com.wiyun': ['Wiyun', 'http://www.wiyun.com/', 6],
+            'com.adchina': ['AdChina', 'http://mobile.adchina.com/AboutUs/index.aspx', 7],
+            'com.adwo.adsdk': ['AdWo', 'http://www.adwo.com/', 8],
+            'com.wq': ['Wq', 'http://www.wqmobile.com/', 9],
+            'cn.appmedia.ad': ['AppMedia', 'http://www.appmedia.cn/top.action', 10],
+            'com.ignitevision.android': ['Tinmoo', 'http://www.tinmoo.com/mobile/index.do', 11],
+            'com.l.adlib_android': ['LSense', 'http://www.lsense.cn/', 12],
+            'com.winad.android': ['Winad', 'http://www.winads.cn/', 13],
+            'com.izp': ['Izp', 'http://www.izptec.com/cn/', 14],
+            'com.mobisage': ['Mobisage', 'http://mobisage.ad-sage.com/', 15],
+            'com.umengAd': ['Umeng', 'http://ads.umeng.com/', 16],
+            'com.fractalist': ['Fractalist', 'http://www.admarket.mobi/', 17],
+            'com.lmmob': ['Lmmob', 'http://www.lmmob.com/', 18],
+            'com.suizong.mobplate': ['SuiZong', 'http://mobile.suizong.com/szmobile/szmWelcomeMgtMgr.action', 19],
+            'cn.aduu.adsdk': ['Aduu', 'http://www.aduu.cn/', 20],
+            'com.millennialmedia.android': ['MillennialMedia', 'http://www.millennialmedia.com/', 21],
+            'com.greystripe.android': ['Greystripe', 'http://www.greystripe.com/', 22],
+            'com.inmobi.androidsdk': ['InMobi', 'http://www.inmobi.com/', 23],
+            'com.mdotm.android': ['MdotM', 'http://mdotm.com/', 24],
+            'com.zestadz.android': ['ZestADZ', 'http://www.komlimobile.com/', 25],
+            'com.smaato.SOMA': ['Smaato', 'http://www.smaato.com/', 26],
+            'com.waps': ['Waps', 'http://www.waps.cn', 27],
+            'cn.waps': ['Waps', 'http://www.waps.cn', 28],
+            'com.emar.escore': ['Yijifen', 'http://www.yijifen.com', 29],
+            'com.juzi.main': ['Juzi', 'http://www.juzi.cn', 30],
+            'com.kyview': ['Adview', 'http://www.adview.cn', 31],
+            'com.energysource': ['Adtouch', 'http://www.adtouchnetwork.com/', 32],
+            'com.mt.airad': ['AirAD ad', 'http://www.airad.com/', 33],
+            'com.vpon.adon': ['Vpon', 'http://www.vpon.com/zh-cn/', 34],
+            'cn.domob.android': ['Domob', 'http://www.domob.cn', 35],
+            'com.guohead.sdk': ['GuoHead', 'http://www.guohead.com', 36]}

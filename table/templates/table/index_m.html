@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+        <title>Min Required SDK</title>
+        <script type="text/javascript" src="/static/js/jquery-1.10.2.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                var option = {
+                    chart: {
+                        renderTo: 'container',
+                        type: 'pie'
+                    },
+                    title: {
+                        text: 'Min Required SDK'
+                    },
+                    tooltip: {
+                  borderRadius: 10,
+                        borderWidth: 2,
+                      formatter: function() {
+                                var s
+                                s = this.point.name +': '+ this.y +' apks';
+                                return s;
+                      }
+                    },
+                    plotOptions: {
+                        pie: {
+                            allowPointSelect: true,
+                            cursor: 'pointer',
+                            dataLabels: {
+                                enabled: true,
+                                color: '#000000',
+                                connectorColor: '#000000',
+                                format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                            }
+                        }
+                    },
+                    exporting:{
+                        enabled:false
+                    },
+                    series: [{
+                  type: 'pie',
+                        name: 'percentage',
+                  data: [] ,
+                    }]
+                }
+
+              Highcharts.theme = {
+                colors: ['#058DC7', '#50B432', '#ED561B', '#DDDF00', '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4'],
+              };
+              var highchartsOptions = Highcharts.setOptions(Highcharts.theme);
+              var total = $("#total");
+
+                $.getJSON('/m/results',function(result){
+                  i=0;
+                  $.each(result, function(k, v){
+                      if (v!=0){
+                     if(i == 0){option.series[0].data.push({name: k, y: v, sliced: true, selected: true});}
+                     else{option.series[0].data.push([k,v]);}
+                     i ++;      }
+                  });
+                var chart = new Highcharts.Chart(option);
+                });
+
+                $.getJSON('/detail',function(result){
+                  $.each(result, function(k, v){
+                total.text('# ' + v + ' Samples')
+                  });
+                });
+
+            });
+        </script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="description" content="Min Required SDK" />
+        <meta name="author" content="Codrops" />
+        <link rel="shortcut icon" href="/static/favicon.ico">
+        <link rel="stylesheet" type="text/css" href="/static/css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="/static/css/style2.css" />
+    </head>
+    <body>
+	    <script src="/static/js/highcharts.js"></script>
+		  <script src="/static/js/unuse/modules/exporting.js"></script>
+        <div class="container">
+        <section class="cn-container">
+          <div class="cn-slide" id="slide-2-3">
+              <header>
+                  <h1>Android Application <span> #Report</span></h1>
+                  <h2>for learning more about your Android smart device security</h2>
+              </header>
+            <h3>Min req sdk</h3>
+            <a href="javascript:self.close()" class="cn-back">Back</a>
+            <div class="cn-content">
+              <div id="container" style="min-width: 310px; height: 500px; margin: 0 auto"></div>
+            </div>
+            <span class="cn-note-total" id='total'></span>
+            <footer class="cn-note">
+                <p class="pull-right"><a href="#slide-2-3">Back to top</a></p>
+                <p>Copyright &copy; 2016 HT All Rights Reserved.</p>
+            </footer>
+          </div>
+        </section>
+        </div>
+
+    </body>
+</html>

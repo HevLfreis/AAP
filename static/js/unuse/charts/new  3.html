@@ -1,0 +1,27 @@
+<html>
+<head>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	temp=[[]];
+	j=0;
+  $("button").click(function(){
+    $.getJSON('http://127.0.0.1:8000/result/obfuscation',function(result){
+      $.each(result, function(i, field){
+		  temp.push([i, field])
+        $("p").append(temp[j]+"[" + field +']');
+		j=j+1;
+      });
+    });
+  });
+});
+</script>
+</head>
+
+<body>
+
+<button>获得 JSON 数据</button>
+<p></p>
+
+</body>
+</html>

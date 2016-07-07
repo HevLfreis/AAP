@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+		<meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+        <title>AD SDK Results</title>
+        <script type="text/javascript" src="/static/js/jquery-1.10.2.js"></script>
+		<script type="text/javascript">
+        $(document).ready(function() {
+        var total = $("#total");
+        var samples;
+        $.getJSON('/detail',function(result){
+            $.each(result, function(k, v){
+                total.text('# ' + v + ' Samples')
+                samples=v;
+            });
+            $.getJSON('/a/results',function(result){
+                $.each(result, function(k, v){
+                    option.xAxis.categories.push(k);
+                    option.series[0].data.push(v);
+                });
+                var chart = new Highcharts.Chart(option);
+            });
+        });
+
+        Highcharts.theme = {
+            colors: ['#64E572','#2ECC71', '#3498DB',  '#9B59B6',  '#E74C3C', '#34495E', '#1ABC9C', '#95A5A6', '#E67E22' ,'#000'],
+        };
+        var highchartsOptions = Highcharts.setOptions(Highcharts.theme);
+
+        var option = {
+          chart: {
+            renderTo: 'container',
+                    type: 'bar'
+                },
+                title: {
+                    text: 'Android Advertisement SDK Usage'
+                },
+                xAxis: {
+                    categories: [],
+                    title: {
+                        text: null
+                    }
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: 'Apks',
+                        align: 'high'
+                    },
+                    labels: {
+                        overflow: 'justify'
+                    }
+                },
+                tooltip: {
+                    borderRadius: 10,
+                    borderWidth: 2,
+                    formatter: function() {
+                        var s
+                        s ='<b>'+this.x+': </b>'+ this.y+' apks';
+                        return s;
+                    }
+                },
+                plotOptions: {
+                    bar: {
+                        dataLabels: {
+                            enabled: true,
+                            formatter: function() {
+                                return Math.round(this.y/samples*100) +' %';
+                            }
+                        }
+                    }
+                },
+                legend: {
+                    layout: 'vertical',
+                    align: 'right',
+                    verticalAlign: 'top',
+                    x: -40,
+                    y: 100,
+                    floating: true,
+                    borderWidth: 1,
+                    backgroundColor: '#FFFFFF',
+                    shadow: true
+                },
+                credits: {
+                    enabled: false
+                },
+                exporting:{
+                    enabled:false
+                },
+                series: [{
+            name: 'Usage',
+            data: []
+            }]
+          };
+        });
+		</script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="AD SDK Results" />
+        <meta name="author" content="Codrops" />
+        <link rel="shortcut icon" href="/static/favicon.ico">
+        <link rel="stylesheet" type="text/css" href="/static/css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="/static/css/style2.css" />
+    </head>
+    <body>
+	    <script src="/static/js/highcharts.js"></script>
+		<script src="/static/js/unuse/modules/exporting.js"></script>
+        <div class="container">
+          <section class="cn-container">
+            <div class="cn-slide" id="slide-2-4">
+
+              <header>
+                  <h1>Android Application <span> #Report</span></h1>
+                  <h2>for learning more about your Android smart device security</h2>
+              </header>
+              <h3>Ad sdk</h3>
+              <a href="javascript:self.close()" class="cn-back">Back</a>
+              <div class="cn-content">
+                <div id="container" style="min-width: 310px; height: 1200px; margin: 0 auto"></div>
+              </div>
+              <span class="cn-note-total" id='total'></span>
+              <footer class="cn-note">
+                  <p class="pull-right"><a href="#slide-2-4">Back to top</a></p>
+                  <p>Copyright &copy; 2016 HT All Rights Reserved.</p>
+              </footer>
+            </div>
+          </section>
+        </div>
+
+    </body>
+</html>

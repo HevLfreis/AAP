@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
+      xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+    <head>
+		<meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+        <title>Android App Report</title>
+        <script type="text/javascript" src="/static/js/jquery-1.10.2.js"></script>
+        <script type="text/javascript" src="/static/js/jquery.uploadify.js"></script>
+        <link rel="stylesheet" href="/static/css/uploadify.css">
+		<script type="text/javascript">
+        location.href = '#slide-main';
+        $(document).ready(function(){
+            $('#fileupload').uploadify ({
+                'swf'		: '/static/js/uploadify.swf',
+                'uploader' 	: '/upload/',
+                'cancelImage' : '/static/css/cancel.png',
+                'removeCompleted': true,
+                'fileTypeDesc' : 'Android Package File',
+                'fileTypeExts' : '*.apk',
+                'fileSizeLimit': '40MB',
+                'multi'		: false,
+                'auto'    : true,
+                'progressData' : 'speed',
+                'buttonText': 'Choose your apk',
+                'width': 300,
+                'height': 60,
+                'successTimeout' : 300,
+                'onUploadSuccess' : function (file, data, response) {
+                    window.location.href = '/' + data + '/show/#slide-3-1'
+                },
+                'onUploadError' : function(file, errorCode, errorMsg, errorString) {
+                    alert('The file ' + file.name + ' could not be uploaded: ' + errorString);
+                },
+                'onSelectError' : function() {
+                    this.queueData.errorMsg = 'This file is not allowed ,PLEASE choose another one !';
+                }
+            });
+        })
+		</script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Android App Report" />
+        <meta name="author" content="Codrops" />
+        <link rel="shortcut icon" href="/static/favicon.ico">
+        <link rel="stylesheet" type="text/css" href="/static/css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="/static/css/style2.css" />
+        <link href="/static/css/bootstrap.css" rel="stylesheet"/>
+    </head>
+    <body>
+	    <script src="/static/js/highcharts.js"></script>
+		<script src="/static/js/unuse/modules/exporting.js"></script>
+        <script src="/static/js/unuse/bootstrap.min.js"></script>
+        <div class="container">
+			<section class="cn-container" >
+				<div class="cn-slide" id="slide-main">
+            <header>
+                <h1>Android Application <span> #Report</span></h1>
+                <h2>for learning more about your Android smart device security</h2>
+            </header>
+					<h3>Home</h3>
+					<nav>
+						<a href="#slide-1">Introduction</a>							
+						<a href="#slide-2">Statistics</a>
+						<a href="#slide-3">Upload your apk</a>
+					</nav>
+            <footer class="cn-note">
+                <p class="pull-right"><a href="#slide-main">Back to top</a></p>
+                <p>Copyright &copy; 2016 HT All Rights Reserved.</p>
+            </footer>
+				</div>
+        <div class="cn-slide cn-slide-sub" id="slide-1">
+            <header>
+                <h1>Android Application <span> #Report</span></h1>
+                <h2>for learning more about your Android smart device security</h2>
+            </header>
+            <h3>Introduction</h3>
+            <a href="#slide-main" class="cn-back">Back</a>
+            <nav>
+                <a href="#slide-1-1" >The report</a>
+                <a href="#slide-1-2" >Further Reading</a>
+                <a href="#slide-1-3" >Thanks</a>
+                <a href="#slide-1-4" >About us</a>
+            </nav>
+            <footer class="cn-note">
+                <p class="pull-right"><a href="#slide-1">Back to top</a></p>
+                <p>Copyright &copy; 2016 HT All Rights Reserved.</p>
+            </footer>
+        </div>
+        <div class="cn-slide" id="slide-1-1">
+            <header>
+                <h1>Android Application <span> #Report</span></h1>
+                <h2>for learning more about your Android smart device security</h2>
+            </header>
+            <h3>The report</h3>
+            <a href="#slide-1" class="cn-back">Back</a>
+            <div class="cn-content">
+                <p>Android Application Report</p>
+            </div>
+            <footer class="cn-note">
+                <p class="pull-right"><a href="#slide-1">Back to top</a></p>
+                <p>Copyright &copy; 2016 HT All Rights Reserved.</p>
+            </footer>
+        </div>
+        <div class="cn-slide" id="slide-1-2">
+            <header>
+                <h1>Android Application <span> #Report</span></h1>
+                <h2>for learning more about your Android smart device security</h2>
+            </header>
+            <h3>Further reading</h3>
+            <a href="#slide-1" class="cn-back">Back</a>
+            <div class="cn-content">
+                <p><a href="http://en.wikipedia.org/wiki/Android_(operating_system)" target="_blank">What's Android ? (click for more information)</a></p>
+                <p><a href="http://developer.android.com/guide/topics/security/permissions.html" target="_blank">Android Permission (click for more information)</a></p>
+                <p><a href="http://docs.oracle.com/javase/1.4.2/docs/guide/security/CryptoSpec.html" target="_blank">Crypto (click for more information) :</a></p>
+                <p>Provides the classes and interfaces for cryptographic operations. </br>
+                    The cryptographic operations defined in this package include encryption, key generation and key agreement,
+                    and Message Authentication Code (MAC) generation.</br>
+                    Support for encryption includes symmetric, asymmetric, block, and stream ciphers.
+                    This package also supports secure streams and sealed objects.
+                    Many of the classes provided in this package are provider-based. </br>
+                    The class itself defines a programming interface to which applications may write.</br>
+                    The implementations themselves may then be written by independent third-party vendors and plugged in seamlessly as needed.</br>
+                    Therefore application developers may take advantage of
+                    any number of provider-based implementations without having to add or rewrite code.</br></br>from java document</p>
+                <p><a href="">Dynamic (click for more information) :</a></p>
+                <p><a href="http://developer.android.com/tools/sdk/ndk/index.html" target="_blank">Native (click for more information) :</a></p>
+                <p>Libraries written in C and other languages can be compiled to ARM, MIPS or x86 native code and installed using the Android Native Development Kit. </br>
+                    Native classes can be called from Java code running under the Dalvik VM using the System.loadLibrary call, which is part of the standard Android Java classes.</br>
+                    Complete applications can be compiled and installed using traditional development tools. The ADB debugger gives a root shell under the Android Emulator
+                    which allows native ARM, MIPS or x86 code to be uploaded and executed. </br>
+                    Native code can be compiled using GCC on a standard PC.</br>
+                    Running native code is complicated by Android's use of a non-standard C library (libc, known as Bionic). The graphics library that Android uses to arbitrate and control access to this device is called the Skia Graphics Library (SGL),
+                    and it has been released under an open source licence. Skia has backends for both Win32 and Unix, allowing the development of cross-platform applications, and it is the graphics engine underlying the Google Chrome web browser.</br>
+                    Unlike Java application development based on the Eclipse IDE, the NDK is based on command-line tools and requires invoking them manually to build, deploy and debug the apps. </br>
+                    Several third-party tools allow integrating the NDK into Eclipse and Visual Studio.</p>
+                <p><a href="http://en.wikipedia.org/wiki/Reflection_(computer_programming)" target="_blank">Reflection (click for more information) :</a></br>
+                </p>
+            </div>
+            <footer class="cn-note">
+                <p class="pull-right"><a href="#slide-1">Back to top</a></p>
+                <p>Copyright &copy; 2016 HT All Rights Reserved.</p>
+            </footer>
+        </div>
+        <div class="cn-slide" id="slide-1-3">
+            <header>
+                <h1>Android Application <span> #Report</span></h1>
+                <h2>for learning more about your Android smart device security</h2>
+            </header>
+            <h3>Thanks</h3>
+            <a href="#slide-1" class="cn-back">Back</a>
+            <div class="cn-content">
+                <p><a href="http://tympanus.net/codrops/2012/03/23/responsive-content-navigator-with-css3/" target="_blank">Mary Lou for the brilliant CSS Tutorial</a></p>
+                <p><a href="http://www.highcharts.com/" target="_blank">Highcharts</a></p>
+                <p><a href="http://code.google.com/p/androguard/" target="_blank">Androguard</a></p>
+                <p><a href="http://www.uploadify.com/" target="_blank">Easy use upload plugin script</a></p>
+                <p><a href="http://www.w3school.com.cn/" target="_blank">W3shool for all the web knowledge</a></p>
+                <p>Wiki</p>
+            </div>
+            <footer class="cn-note">
+                <p class="pull-right"><a href="#slide-1">Back to top</a></p>
+                <p>Copyright &copy; 2016 HT All Rights Reserved.</p>
+            </footer>
+        </div>
+        <div class="cn-slide" id="slide-1-4">
+            <header>
+                <h1>Android Application <span> #Report</span></h1>
+                <h2>for learning more about your Android smart device security</h2>
+            </header>
+            <h3>About us</h3>
+            <a href="#slide-1" class="cn-back">Back</a>
+            <div class="cn-content">
+                <p>Author : Haytham Teng</p>
+                <p>Email: hevlhayt@foxmail.com</p>
+            </div>
+            <footer class="cn-note">
+                <p class="pull-right"><a href="#slide-1">Back to top</a></p>
+                <p>Copyright &copy; 2016 HTAll Rights Reserved.</p>
+            </footer>
+        </div>
+
+				<div class="cn-slide cn-slide-sub" id="slide-2">
+              <header>
+                  <h1>Android Application <span> #Report</span></h1>
+                  <h2>for learning more about your Android smart device security</h2>
+              </header>
+					<h3>Statistics</h3>
+					<a href="#slide-main" class="cn-back">Back</a>
+					<nav>
+						<a href="/permission/#slide-2-1" target="_blank">Permission</a>
+						<a href="/obfuscation/#slide-2-2" target="_blank">Obfuscation</a>
+						<a href="/minreqsdk/#slide-2-3" target="_blank">Min req sdk</a>
+						<a href="/adsdk/#slide-2-4" target="_blank">AD sdk</a>
+					</nav>
+          <footer class="cn-note">
+              <p class="pull-right"><a href="#slide-2">Back to top</a></p>
+              <p>Copyright &copy; 2016 HT All Rights Reserved.</p>
+          </footer>
+				</div>
+                <!-- Slide 3 -->
+				<div class="cn-slide" id="slide-3">
+          <header>
+              <h1>Android Application <span> #Report</span></h1>
+              <h2>for learning more about your Android smart device security</h2>
+          </header>
+					<h3>Upload your apk</h3>
+					<a href="#slide-main" class="cn-back">Back</a>
+					<div class="cn-content">
+              <li>You can upload your own apk to our project</li>
+              <li>Our system will grade your apk file on the risk as <span>"RISK SCORE"</span></li>
+              <li>Higher the score is, Higher the risk the apk file holds</li>
+              <li>Also , your apk file will add to our database</li>
+              <li>Click the following button to known better about your apk file</li>
+              <li>When the uploading is finished, it will take less than 1 minute for
+               analyzing, please wait...</li>
+              <p><input name="file" type="file" id="fileupload"/></p>
+					</div>
+          <footer class="cn-note">
+              <p class="pull-right"><a href="#slide-3">Back to top</a></p>
+              <p>Copyright &copy; 2016 HT All Rights Reserved.</p>
+          </footer>
+				</div>
+			</section>
+    </div>
+    </body>
+</html>
